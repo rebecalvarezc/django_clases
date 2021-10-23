@@ -14,8 +14,14 @@ def primera_vista(request):  # a toda función creada dentro del archivo views.p
     return HttpResponse(doc)
 
 
+# Usando cargadores:
 def segunda_vista(request):
-    return HttpResponse('Hasta luego, gracias por visitar!')
+    path = 'C:/Users/Rebeca/PycharmProjects/djangoProject/plantillas/plantilla2.html'
+    with open(path, 'r', encoding='utf-8') as doc_externo:
+        plantilla = Template(doc_externo.read())
+    ctx = Context({'nombre_creador': 'Rebeca', 'apellido_creador': 'Alvarez'})
+    doc = plantilla.render(ctx)
+    return HttpResponse(doc)
 
 
 # contenido dinámico
