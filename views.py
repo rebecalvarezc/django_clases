@@ -23,3 +23,18 @@ def fecha(request):
     </body>
     </html>"""
     return HttpResponse(formato.format(fecha_actual))
+
+
+# Django usa URL friendly, evita usar símbolos extraños en la URL.
+def calculo_edad(request, year, edad):
+    periodo = year - 2021
+    edad_futura = edad + periodo
+    formato = """
+    <html>
+    <body>
+        <h2>
+        En el año {} tendrás {} años.
+        </h2>
+    </body>
+    </html>"""
+    return HttpResponse(formato.format(year, edad_futura))
