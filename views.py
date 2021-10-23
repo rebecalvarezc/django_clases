@@ -25,9 +25,11 @@ def segunda_vista(request):
     creador = Persona('Rebeca', 'Alvarez C')
     path = 'C:/Users/Rebeca/PycharmProjects/djangoProject/plantillas/plantilla2.html'
     now = datetime.datetime.now()
+    temas_curso = ["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegue"]
     with open(path, 'r', encoding='utf-8') as doc_externo:
         plantilla = Template(doc_externo.read())
-    ctx = Context({'nombre_creador': creador.nombre, 'apellido_creador': creador.apellido, 'hora': now})
+    ctx = Context({'nombre_creador': creador.nombre, 'apellido_creador': creador.apellido, 'hora': now,
+                   'temas': temas_curso})
     # podemos poner directamente la información en las key del dict o si usamos POO crear una clase y con sus atributos
     # añadir información al dict
     doc = plantilla.render(ctx)

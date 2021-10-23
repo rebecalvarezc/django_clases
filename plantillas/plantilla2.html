@@ -2,15 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Goodbye</title>
 </head>
 <body>
     <h1> Hasta luego, gracias por visitarnos :) </h1>
-    <p> Esta página fué creada por: {{nombre_creador}} {{apellido_creador}}.</p>
+    <p> Esta página fué creada por: {{nombre_creador.upper}} {{apellido_creador.upper}}.</p>
      <!-- nombre_persona es igual al nombre de la clave del dict que creamos en views.py -->
     <br>
     <p> La fecha es: {{hora.date}}</p>
     <!-- Con el punto accedemos a las propiedades de esa función: day, date, etc.
     Otra forma sería: {{hora.day}}/ {{hora.month}}/{{hora.year}}-->
+    <br>
+    <p><strong>Temas a aprender:</strong></p>
+    <p>
+    {% if temas %}
+        <ul>
+        {% for item in temas%}
+        <!--Los bucles en Django van entre llaves simples -->
+            <li>{{item}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p> No hay temas disponibles por el momento.</p>
+    {% endif %}
+    </p>
+    <!--Con temas.X accedemos al elemento en X posición -->
 </body>
 </html>
