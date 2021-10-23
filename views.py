@@ -7,9 +7,8 @@ from django.template import Template, Context
 def primera_vista(request):  # a toda función creada dentro del archivo views.py se le denomina "vista"
     path = 'C:/Users/Rebeca/PycharmProjects/djangoProject/plantillas/plantilla1.html'
     # Esto idealmente se hace con cargadores.
-    doc_externo = open(path, encoding='utf-8') # Intenté hacer esto con context manager pero no funcionó. Help :(
-    plantilla = Template(doc_externo.read())
-    doc_externo.close()
+    with open(path, 'r', encoding='utf-8') as doc_externo:
+        plantilla = Template(doc_externo.read())  # ¿Por qué tengo que poner read dos veces?
     ctx = Context()
     doc = plantilla.render(ctx)
     return HttpResponse(doc)
