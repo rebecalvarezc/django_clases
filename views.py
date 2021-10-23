@@ -3,6 +3,12 @@ import datetime
 from django.template import Template, Context
 
 
+class Persona(object):
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
+
+
 # contenido estático.
 def primera_vista(request):  # a toda función creada dentro del archivo views.py se le denomina "vista"
     path = 'C:/Users/Rebeca/PycharmProjects/djangoProject/plantillas/plantilla1.html'
@@ -16,10 +22,14 @@ def primera_vista(request):  # a toda función creada dentro del archivo views.p
 
 # Usando cargadores:
 def segunda_vista(request):
+    creador = Persona('Rebeca', 'Alvarez C')
     path = 'C:/Users/Rebeca/PycharmProjects/djangoProject/plantillas/plantilla2.html'
+    now = datetime.datetime.now()
     with open(path, 'r', encoding='utf-8') as doc_externo:
         plantilla = Template(doc_externo.read())
-    ctx = Context({'nombre_creador': 'Rebeca', 'apellido_creador': 'Alvarez'})
+    ctx = Context({'nombre_creador': creador.nombre, 'apellido_creador': creador.apellido, 'hora': now})
+    # podemos poner directamente la información en las key del dict o si usamos POO crear una clase y con sus atributos
+    # añadir información al dict
     doc = plantilla.render(ctx)
     return HttpResponse(doc)
 

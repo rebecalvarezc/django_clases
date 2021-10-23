@@ -6,7 +6,11 @@
 </head>
 <body>
     <h1> Hasta luego, gracias por visitarnos :) </h1>
-    <p> Esta página fué creada por: {{nombre_creador}} {{apellido_creador}}</p>
-    <!-- nombre_persona es igual al nombre de la clave del dict que creamos en views.py -->
+    <p> Esta página fué creada por: {{nombre_creador}} {{apellido_creador}}.</p>
+     <!-- nombre_persona es igual al nombre de la clave del dict que creamos en views.py -->
+    <br>
+    <p> La fecha es: {{hora.date}}</p>
+    <!-- Con el punto accedemos a las propiedades de esa función: day, date, etc.
+    Otra forma sería: {{hora.day}}/ {{hora.month}}/{{hora.year}}-->
 </body>
 </html>
