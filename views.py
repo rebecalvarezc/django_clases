@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
-from django.template import loader
+# from django.template import loader
+from django.shortcuts import render
 # from django.template.loader import get_template
 
 
@@ -39,16 +40,26 @@ def primera_vista(request):  # a toda función creada dentro del archivo views.p
 
 
 # Usando cargadores:
+# def segunda_vista(request):
+#     now = datetime.datetime.now()
+#     temas_curso = ["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegue"]
+#     creador = Persona('Rebeca', 'Alvarez C')
+#     plantilla = loader.get_template('plantilla2.html')  # se pone la dirección de los templates en settings.py primero
+#     # este template no es igual al anterior, por lo que el render va a funcionar de forma diferente.
+#     doc = plantilla.render({'nombre_creador': creador.nombre, 'apellido_creador': creador.apellido, 'hora': now,
+#                             'temas': temas_curso})
+#     # al ser diferente el template anterior, se para el diccionario asi, no con un context
+#     return HttpResponse(doc)
+
+# Módulo shortcuts
 def segunda_vista(request):
     now = datetime.datetime.now()
     temas_curso = ["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegue"]
-    creador = Persona('Rebeca', 'Alvarez C')
-    plantilla = loader.get_template('plantilla2.html')  # se pone la dirección de los templates en settings.py primero
-    # este template no es igual al anterior, por lo que el render va a funcionar de forma diferente.
-    doc = plantilla.render({'nombre_creador': creador.nombre, 'apellido_creador': creador.apellido, 'hora': now,
-                            'temas': temas_curso})
-    # al ser diferente el template anterior, se para el diccionario asi, no con un context
-    return HttpResponse(doc)
+    creador = Persona('Rebeca', 'Alvarez Cepeda')
+    return render(request, 'plantilla2.html',
+                  {'nombre_creador': creador.nombre, 'apellido_creador': creador.apellido, 'hora': now,
+                   'temas': temas_curso})
+
 
 
 # contenido dinámico
