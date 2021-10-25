@@ -52,7 +52,8 @@ ROOT_URLCONF = 'djangoProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # Dirs hace referencia a los directorios. Al estar vacío Django busca en un directorio por defecto
+        'DIRS': ['C:/Users/Rebeca/PycharmProjects/djangoProject/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -6,20 +6,32 @@
 </head>
 <body>
     <h1> Hasta luego, gracias por visitarnos :) </h1>
-    <p> Esta página fué creada por: {{nombre_creador.upper}} {{apellido_creador.upper}}.</p>
-     <!-- nombre_persona es igual al nombre de la clave del dict que creamos en views.py -->
-    <br>
-    <p> La fecha es: {{hora.date}}</p>
-    <!-- Con el punto accedemos a las propiedades de esa función: day, date, etc.
-    Otra forma sería: {{hora.day}}/ {{hora.month}}/{{hora.year}}-->
+    <!-- No es recomendable abusar de las estructuras de control de flujo dentro de una plantilla.
+    Ya que Django quiere separar la parte lógica del diseño. Evitar si es posible -->
+
+    {# No temas diseñador, ignora esto #}
+    {% comment %} Esto es para un comentario
+        de dos o más líneas
+    {% endcomment %}
+
+    {% if nombre_creador == 'Rebeca' %}
+        <p> Esta página fué creada por: <strong>{{nombre_creador|upper}} {{apellido_creador.upper}}</strong>.</p>
+         <!-- nombre_persona es igual al nombre de la clave del dict que creamos en views.py -->
+        <!-- Un filtro se usa con una barra vertical (ALT +124) y el método a aplicar. Hace lo mismo que el .upper
+        Además se pueden encadenar filtros.-->
+    {% else %}
+        <p> Esta página ue creada por un ser humano.</p>
+    {% endif %}
     <br>
     <p><strong>Temas a aprender:</strong></p>
     <p>
+        <!--Es posible utilizar operadores de comparación dentro de un if-->
     {% if temas %}
         <ul>
         {% for item in temas%}
         <!--Los bucles en Django van entre llaves simples -->
-            <li>{{item}}</li>
+            <li>{{item|first|lower}}</li>
+        <!--filtros encadenados |first|lower. Buscar en Django "template filters" -->
         {% endfor %}
         </ul>
     {% else %}
