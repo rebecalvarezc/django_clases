@@ -12,4 +12,9 @@ Posteriormente, en la plantilla se escribe el valor a usar de la siguiente forma
     - Índice de lista
 6.- Se puede hacer uso de bucles for en plantillas mediante el uso de corchetes simples. Ej.: {% for x in list %}.
 Nota: es importante cerrar el bucle con: {% endfor %}. Además puede usarse también para los if y estos hay que cerrarlos también.
-7.- Las llamadas a métodos desde una plantilla de python no usan los paréntesis. Ej: {{nombre.lower}}
+7.- Las llamadas a métodos desde una plantilla de python no usan los paréntesis. Ej: {{nombre.lower}}.
+8.- Existen filtros de plantilla, que son como los métodos de Python.
+9.- Es posible utilizar operadores de comparación dentro de los if de las plantillas, aunque debemos evitar abusar de esto.
+10.- Las plantillas pueden incluir otras plantillas mediante: {% include "ruta/de/la/plantilla" %}.
+11.- Al igual que en la POO se puede crear una plantilla padre de la que otras plantillas puedan heredar. La herencia se indica en cada 
+plantilla mediante el uso de {% extends "Padre.html" %}.

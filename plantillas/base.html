@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+      {% block title %} {% endblock %}
+      <!-- de esta forma indicamos que el contenido aquí puede cambiar -->
+    </title>
+
+</head>
+<body>
+    {% include "upper/barra_nav.html" %}
+    <br>
+  <h1 style="color: darkred; text-align: center; text-transform: uppercase">Aprendiendo Django</h1>
+  <h3 style="text-align: center">Mediante un curso de programación en Django para principiantes</h3>
+  <br>
+    {% block content %}
+
+    {% endblock %}
+  <br>
+  <footer style="text-align: right; background-color: darkred; color: white">Gracias por su visita!</footer>
+</body>
+</html>

@@ -3,6 +3,8 @@ import datetime
 from django.template import Template, Context
 # from django.template import loader
 from django.shortcuts import render
+
+
 # from django.template.loader import get_template
 
 
@@ -59,6 +61,15 @@ def segunda_vista(request):
     return render(request, 'plantilla2.html',
                   {'nombre_creador': creador.nombre, 'apellido_creador': creador.apellido, 'hora': now,
                    'temas': temas_curso})
+
+
+# Herencia de Plantillas
+def home(request):
+    fecha_actual = datetime.datetime.now()
+    return render(request, "home_page.html", {'fecha': fecha_actual})
+
+def page_two(request):
+    return render(request, "pagetwo.html")
 
 
 

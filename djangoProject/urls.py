@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from views import primera_vista, segunda_vista, fecha, calculo_edad
+from views import primera_vista, segunda_vista, fecha, calculo_edad, home, page_two
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('primera_vista/', primera_vista),
     path('segunda_vista/', segunda_vista),
     path('fecha/', fecha),
-    path('edad/<int:edad>/<int:year>', calculo_edad)
+    path('edad/<int:edad>/<int:year>', calculo_edad),
     # el int hace que la edad introducida se trabaje como int. IMPORTANTE
+    path('home/', home),
+    path('pagetwo/', page_two)
 ]
