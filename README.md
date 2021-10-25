@@ -18,3 +18,4 @@ Nota: es importante cerrar el bucle con: {% endfor %}. Además puede usarse tamb
 10.- Las plantillas pueden incluir otras plantillas mediante: {% include "ruta/de/la/plantilla" %}.
 11.- Al igual que en la POO se puede crear una plantilla padre de la que otras plantillas puedan heredar. La herencia se indica en cada 
 plantilla mediante el uso de {% extends "Padre.html" %}.
+12.- Django nos permite trabajar con bases de datos.
