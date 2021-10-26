@@ -45,4 +45,13 @@ distintos proyectos.
 15.- Con la clase Model de Django creamos la base de datos, sin embargo para poder usarlo es necesario haber creado una aplicación.
 (Django no puede trabajar con Modelos si no has creado una aplicación).
 
-16.- Mediante el comando "python manage.py startapp 'nombredelaapp'" en el terminal, creamos la aplicación.
+16.- Mediante el comando "python manage.py startapp 'nombredelaapp'" en el terminal, creamos la aplicación. Una vez creada la aplicación,
+es necesario indicarle al proyecto que la misma existe en settings.py, en INSTALLED APPS.
+
+17.- Una vez escritas las tablas de models, en el terminal: 'python manage.py makemigrations'. De esta forma creamos la base de datos y le indica a Django que debería de tener la misma dentro.
+Sin embargo, en este punto no ha creado las tablas aún. Para ello debemos escribir en el terminal: 'python manage.py "nombredelaapp" nro.delamigración'. El nro de la migración es el que nos ha dado anteriormente al usar
+el comando 'makemigrations'.
+
+18.-Las tablas que tiene Django tienen por defecto una Primary key que se Autoincrementa y es el 'id'. Para que finalmente esta base de datos tenga sus tablas usar en el terminal: 'python manage.py migrate'.
+
+19.- 
