@@ -100,3 +100,8 @@ el comando 'makemigrations'.
     22.2.- con clausula WHERE: 'Goods.objects.filter(criterio1, criterio2, ...). Esto nos devuelve un  QuerySet con dos objetos dentro de una lista.
     Para ver la información dentro de la lista hay que pedirle a Django que nos transforme los Modelos creados en cadenas de caracteres. 
     Para ello usamos: __str__ dentro de la clase creada (definimos la función).
+    Nota: siempre que hagamos cambios en la clase hay que volver a migrar (e importar y volver a hacer el comando de filter) para poder usar la clase actualizada.
+    22.3.- Para usar > y <: Goods.objects.filter(price__gte= numero) esto es equivalente a buscar un precio mayor que numero. Para menor que se usa: __lte=numero.
+    Se puede usar tambien price__range(num1, num2) IMPORTANTE: No me funciona, preguntar!!!
+    22.4.- Para establecer ORDEY BY: Goods.objects.filter(criterio).order_by('columna') de forma ascendente, de forma descendente: .order_by('-colum').
+
