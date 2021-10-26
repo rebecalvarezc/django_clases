@@ -92,3 +92,7 @@ el comando 'makemigrations'.
     21.1.- 'python manage.py shell'
     21.2.- 'from "nombredelaapp".models import "NombreTabla"'
     21.3.- client=Clients(name='Rebeca', address='My home', phone='12345678'), client.save()
+
+22.- Como realizar consultas con criterios:
+
+    22.1.-
