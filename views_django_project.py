@@ -15,7 +15,7 @@ class Persona(object):
 
 
 # contenido estático.
-def primera_vista(request):  # a toda función creada dentro del archivo views.py se le denomina "vista"
+def primera_vista(request):  # a toda función creada dentro del archivo views_django_project.py se le denomina "vista"
     path = 'C:/Users/Rebeca/PycharmProjects/djangoProject/plantillas/plantilla1.html'
     # Esto idealmente se hace con cargadores.
     with open(path, 'r', encoding='utf-8') as doc_externo:
