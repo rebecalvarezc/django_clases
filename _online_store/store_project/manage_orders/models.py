@@ -16,6 +16,9 @@ class Goods(models.Model):
     section = models.CharField(max_length=20)
     price = models.IntegerField()
 
+    def __str__(self):
+        return f'The article name is {self.name}, the section is {self.section} and the price is {self.price}$.'
+
 
 class Orders(models.Model):
     number = models.IntegerField()

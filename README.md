@@ -94,5 +94,9 @@ el comando 'makemigrations'.
     21.3.- client=Clients(name='Rebeca', address='My home', phone='12345678'), client.save()
 
 22.- Como realizar consultas con criterios:
-
-    22.1.-
+    
+    22.0.- 'python manage.py shell'
+    22.1.- 'from manage_orders.models import Goods'
+    22.2.- con clausula WHERE: 'Goods.objects.filter(criterio1, criterio2, ...). Esto nos devuelve un  QuerySet con dos objetos dentro de una lista.
+    Para ver la información dentro de la lista hay que pedirle a Django que nos transforme los Modelos creados en cadenas de caracteres. 
+    Para ello usamos: __str__ dentro de la clase creada (definimos la función).
