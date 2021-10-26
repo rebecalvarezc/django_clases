@@ -68,9 +68,9 @@ def home(request):
     fecha_actual = datetime.datetime.now()
     return render(request, "home_page.html", {'fecha': fecha_actual})
 
+
 def page_two(request):
     return render(request, "pagetwo.html")
-
 
 
 # contenido dinámico
