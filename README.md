@@ -44,7 +44,6 @@ distintos proyectos.
 
 *Nota: ORM (Object Relational Mapping) es un modelo de programación que permite mapear las estructuras de una base de datos relacional sobre una estructura lógica de entidades con el objeto de simplificar y acelerar el desarrollo de nuestras aplicaciones.
 Los ORMs tienden a “liberarnos” de la escritura o generación manual de código SQL. Así, los objetos o entidades de la base de datos virtual creada en nuestro ORM podrán ser manipulados por medio de algún lenguaje de nuestro interés según el tipo de ORM utilizado.
-Django utiliza este modelo para manejar sus bases de datos.*
 
 15.- Con la clase Model de Django creamos la base de datos, sin embargo para poder usarlo es necesario haber creado una aplicación.
 (Django no puede trabajar con Modelos si no has creado una aplicación).
