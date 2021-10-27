@@ -10,6 +10,9 @@ class Clients(models.Model):
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=13)
 
+    def __str__(self):
+        return self.name
+
 
 class Goods(models.Model):
     name = models.CharField(max_length=30)

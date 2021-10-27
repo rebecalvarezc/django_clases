@@ -111,12 +111,26 @@ el comando 'makemigrations'.
 desde un perfil de administrador. Dependiendo de la complejidad de la página es necesario usar este panel o no. Cuando creamos el proyecto con 'startproject' el panel de administración
 de Django ya aparece habilitado. En urls.py está el path al panel de administración, es el primero de la lista.
 
-24.- Para acceder al panel es necesario crear un superusuario, esto lo debemos hacer nosotros. En el terminal, dentro de la carpeta del proyecto, usar: 'python manage.py createsuperuser'.
-Nota: Las otras tablas que Django crea por defecto en las bases de datos están relacionadas a la información del panel de usuarios.
+    a) Para acceder al panel es necesario crear un superusuario, esto lo debemos hacer nosotros. En el terminal, dentro de la carpeta del proyecto, usar: 'python manage.py createsuperuser'.
+    Nota: Las otras tablas que Django crea por defecto en las bases de datos están relacionadas a la información del panel de usuarios.
 
-25.- En el archivo admin.py se codifica lo necesario para poder manipular nuestras tablas. Una vez codificado aquí, aparecerá la tabla en el panel de administración.
-De esta forma podemos manejar algunas tablas de una forma más friendly. 
-Nota: En el panel de administración, los campos que aparezcan en negritas serán aquellos que son obligatorios rellenar.
+    b)En el archivo admin.py se codifica lo necesario para poder manipular nuestras tablas. Una vez codificado aquí, aparecerá la tabla en el panel de administración.
+    De esta forma podemos manejar algunas tablas de una forma más friendly. 
+    Nota: En el panel de administración, los campos que aparezcan en negritas serán aquellos que son obligatorios rellenar.
 
-26.- Para hacer un campo opcional nos vamos a models.py y en el argumento del campo incluimos: blank=True, null=True. Ejm: models.CharField(blank=True, null=True).
-Luego tenemos que 'python manage.py makemigrations' & 'python manage.py migrate'.
+    c) Para hacer un campo opcional nos vamos a models.py y en el argumento del campo incluimos: blank=True, null=True. Ejm: models.CharField(blank=True, null=True).
+    Luego tenemos que 'python manage.py makemigrations' & 'python manage.py migrate'.
+
+    d) Para cambiar los nombres de los campos de las tablas en el panel de administración (no afectando la tabla), dentro del argumento del campo incluimos verbose_name="Nombre que queremos mostrar".
+    Existe otra forma, pero puede generar problemas con las claves foráneas, por lo cual evitar usar un método diferente a este. 
+
+    e)Si quiero ver más campos en el panel de administración, en el archivo admin creo una clase que herede de model admin (la cual permite hacer modificaciones en los modelos con los que estamos trabajando en el panel de administración).
+    Para esto creamos una clase en admin.py y mediante el método list_display indicamos que campos quiero mostrar. Ejm.- list_display=('name', 'phone').
+    Nota: en admin.site.register(Modelo, NuevaClase) --> Incluir la nueva clase que hereda en el comando. Luego tenemos que reiniciar el servidor.
+
+    f) Para hacer búsquedas agregamos en la clase anterior el método search_fields = ('campo1', 'campo2'...).
+
+    g) Para filtrar los registros de la tabla en el panel de administración en admin.py creamos una nueva clase, la cual heredará de 'admin.ModelAdmin' como la clase que creamos en el punto anterior.
+    Dentro de la clase usar list_filters =().Actualizar también el admin.site.register de la tabla a fitrar. Además, si usamos date_hierarchy = 'campo1', me detecta los meses y días en donde tengo guardado registros.
+
+    h)
