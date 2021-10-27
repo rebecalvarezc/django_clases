@@ -133,4 +133,5 @@ de Django ya aparece habilitado. En urls.py está el path al panel de administra
     g) Para filtrar los registros de la tabla en el panel de administración en admin.py creamos una nueva clase, la cual heredará de 'admin.ModelAdmin' como la clase que creamos en el punto anterior.
     Dentro de la clase usar list_filters =().Actualizar también el admin.site.register de la tabla a fitrar. Además, si usamos date_hierarchy = 'campo1', me detecta los meses y días en donde tengo guardado registros.
 
-    h)
+24.- Para enviar datos al servidor usamos un request, el servidor puede manipular este objeto request y obtener a su vez información del usuario (IP, navegador utilizado, etc.)
+Nota: Buscar request object Django y leer la documentación oficial.
