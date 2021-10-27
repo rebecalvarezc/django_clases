@@ -115,4 +115,8 @@ de Django ya aparece habilitado. En urls.py está el path al panel de administra
 Nota: Las otras tablas que Django crea por defecto en las bases de datos están relacionadas a la información del panel de usuarios.
 
 25.- En el archivo admin.py se codifica lo necesario para poder manipular nuestras tablas. Una vez codificado aquí, aparecerá la tabla en el panel de administración.
-De esta forma podemos manejar algunas tablas de una forma más friendly. Nota: En el panel de administración, los campos que aparezcan en negritas serán aquellos que son obligatorios rellenar.
+De esta forma podemos manejar algunas tablas de una forma más friendly. 
+Nota: En el panel de administración, los campos que aparezcan en negritas serán aquellos que son obligatorios rellenar.
+
+26.- Para hacer un campo opcional nos vamos a models.py y en el argumento del campo incluimos: blank=True, null=True. Ejm: models.CharField(blank=True, null=True).
+Luego tenemos que 'python manage.py makemigrations' & 'python manage.py migrate'.
