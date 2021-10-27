@@ -52,7 +52,7 @@ Los ORMs tienden a “liberarnos” de la escritura o generación manual de cód
 es necesario indicarle al proyecto que la misma existe en settings.py, en INSTALLED APPS.
 
 17.- Una vez escritas las tablas de models, en el terminal: 'python manage.py makemigrations'. De esta forma creamos la base de datos y le indica a Django que debería de tener la misma dentro.
-Sin embargo, en este punto no ha creado las tablas aún. Para ello debemos escribir en el terminal: 'python manage.py "nombredelaapp" nro.delamigración'. El nro de la migración es el que nos ha dado anteriormente al usar
+Sin embargo, en este punto no ha creado las tablas aún. Para ello debemos escribir en el terminal: 'python manage.py sqlmigratep "nombredelaapp" nro.delamigración'. El nro de la migración es el que nos ha dado anteriormente al usar
 el comando 'makemigrations'.
 
 18.-Las tablas que tiene Django tienen por defecto una Primary key que se Autoincrementa y es el 'id'. Para que finalmente esta base de datos tenga sus tablas usar en el terminal: 'python manage.py migrate'.
@@ -114,4 +114,5 @@ de Django ya aparece habilitado. En urls.py está el path al panel de administra
 24.- Para acceder al panel es necesario crear un superusuario, esto lo debemos hacer nosotros. En el terminal, dentro de la carpeta del proyecto, usar: 'python manage.py createsuperuser'.
 Nota: Las otras tablas que Django crea por defecto en las bases de datos están relacionadas a la información del panel de usuarios.
 
-25.- En el archivo admin.py se codifica lo necesario para poder manipular nuestras tablas.
+25.- En el archivo admin.py se codifica lo necesario para poder manipular nuestras tablas. Una vez codificado aquí, aparecerá la tabla en el panel de administración.
+De esta forma podemos manejar algunas tablas de una forma más friendly. Nota: En el panel de administración, los campos que aparezcan en negritas serán aquellos que son obligatorios rellenar.
