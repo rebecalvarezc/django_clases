@@ -105,3 +105,11 @@ el comando 'makemigrations'.
     Se puede usar tambien price__range(num1, num2) IMPORTANTE: No me funciona, preguntar!!!
     22.4.- Para establecer ORDEY BY: Goods.objects.filter(criterio).order_by('columna') de forma ascendente, de forma descendente: .order_by('-colum').
 
+23.- Un panel de administración maneja tu página web (de la misma forma que un gestor de contenidos (Ej. Wordpress) te ayuda a manejar el diseño de una página web)
+desde un perfil de administrador. Dependiendo de la complejidad de la página es necesario usar este panel o no. Cuando creamos el proyecto con 'startproject' el panel de administración
+de Django ya aparece habilitado. En urls.py está el path al panel de administración, es el primero de la lista.
+
+24.- Para acceder al panel es necesario crear un superusuario, esto lo debemos hacer nosotros. En el terminal, dentro de la carpeta del proyecto, usar: 'python manage.py createsuperuser'.
+Nota: Las otras tablas que Django crea por defecto en las bases de datos están relacionadas a la información del panel de usuarios.
+
+25.- En el archivo admin.py se codifica lo necesario para poder manipular nuestras tablas.
