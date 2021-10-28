@@ -111,10 +111,15 @@ Esto almacena todos los artículos que tengo en mi variable nueva.
 20.- Para configurar Django con PostgreSQL:
 
 a) En la página principal, descargar el gestor de base de datos.
+
 b) Crear la contraseña que nos va a pedir PostgreSQL para manejarlo.
+
 c) En la base de datos que crea SQL por defecto (postgres):botón derecho -> query tool. Aquí podemos introducir instrucciones de tipo SQL. Ejm.: create database 'DataBaseName'.
+
 d) Para conectar la base de datos creada en PostgreSQL con Django es necesario instalar la libreria psycopg2 ('pip installs psycopg2').
-e) En settings.py en DATABASES cambiar: 'ENGINE' a: 'django.db.backends.postgreSQL_psycopg2' y 'NAME' a: 'DataBaseName'. Añadir al dict: 'USER': 'postgres', 'PASSWORD': 'contraseña', 'HOST': LocalHost (ó 127.0.0.1), 'DATABASE_PORT': '5432',.
+
+e) En settings.py en DATABASES cambiar: 'ENGINE' a: 'django.db.backends.postgreSQL_psycopg2' y 'NAME' a: 'DataBaseName'. Añadir al dict: 'USER': 'postgres', 'PASSWORD': 'contraseña', 'HOST': LocalHost (ó 127.0.0.1), 'DATABASE_PORT': '5432'.
+
 f) Posteriormente en el terminal: 
     
     >>> python manage.py makemigrations
