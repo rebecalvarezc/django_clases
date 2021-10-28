@@ -109,6 +109,7 @@ Ejm: goods.price=95, goods.save(). (Lo mismo que un query de tipo UPDATE)
 Esto almacena todos los artículos que tengo en mi variable nueva.
     
 20.- Para configurar Django con PostgreSQL:
+
 a) En la página principal, descargar el gestor de base de datos.
 b) Crear la contraseña que nos va a pedir PostgreSQL para manejarlo.
 c) En la base de datos que crea SQL por defecto (postgres):botón derecho -> query tool. Aquí podemos introducir instrucciones de tipo SQL. Ejm.: create database 'DataBaseName'.
