@@ -137,3 +137,7 @@ de Django ya aparece habilitado. En urls.py está el path al panel de administra
 Nota: Buscar request object Django y leer la documentación oficial.
 
 25.- Se puede usar la información de un formulario para buscar en una base de datos, sin embargo, es necesario agregar parámetros a esta búsqueda para disminuir los recursos consumidos.
+
+26.- Buscar CSRF token (impide ataque a la web por secuestro de sesión).
+
+27.- Para enviar e-mail desde Django se hace uso de la librería core.mail.

@@ -22,4 +22,6 @@ def search(request):
 
 
 def contact(request):
+    if request.method == 'POST':
+        return HttpResponse('<html><body><h1> Thanks! </h1></body></html>')
     return render(request, 'contact.html')
