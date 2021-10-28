@@ -23,5 +23,9 @@ def search(request):
 
 def contact(request):
     if request.method == 'POST':
+        subject = request.POST['subject']
+        message = request.POST['message'] + request.POST['e-mail']
+        email_from = settings.EMAIL_HOST_USER
+        # especificamos de donde viene el e-mail (de la dirección indicada en settings.py
         return HttpResponse('<html><body><h1> Thanks! </h1></body></html>')
     return render(request, 'contact.html')

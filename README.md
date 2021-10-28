@@ -141,3 +141,24 @@ Nota: Buscar request object Django y leer la documentación oficial.
 26.- Buscar CSRF token (impide ataque a la web por secuestro de sesión).
 
 27.- Para enviar e-mail desde Django se hace uso de la librería core.mail.
+
+    En settings.py introducir al final: EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    Nota: buscar esto en la documentación de Django.
+    Luego: EMAIL_HOST = 'smtp.gmail.com'
+    Nota: Gmail viene configurado para impedir a programas de terceros el uso de su mensajería. Si lo queremos usar en Django debemos cambiar la configuración del e-mail.
+    
+A continuación es necesario especificar el protocolo de seguridad que utilizan en el servidor de correos (TLS o SSL), dependiendo del utilizado es necesario usar un puerto u otro.
+Esto también se encuentra en la configuración de gmail.
+
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = 'dirección de correo eléctronico de gmail'
+    EMAIL_HOST_PASSWORD = 'contraseña'
+
+Posteriormente, si queremos probar que está funcionando lo configurado:
+
+    >>> python manage.py shell
+    >>> from django.coremail import send_mail
+    >>> send_mail('asunto del mensaje', 'cuerpo del mensaje', 'dirección del remitente', ['direccion del destinatario'], fail_silently= False)
+
+Si todo está como queremos, en views.py hacemos la configuración de que se envíe la información del formulario al correo configurado.
