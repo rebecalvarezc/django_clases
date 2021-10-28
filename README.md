@@ -158,7 +158,7 @@ Esto también se encuentra en la configuración de gmail.
 Posteriormente, si queremos probar que está funcionando lo configurado:
 
     >>> python manage.py shell
-    >>> from django.coremail import send_mail
+    >>> from django.core.mail import send_mail
     >>> send_mail('asunto del mensaje', 'cuerpo del mensaje', 'dirección del remitente', ['direccion del destinatario'], fail_silently= False)
 
 Si todo está como queremos, en views.py hacemos la configuración de que se envíe la información del formulario al correo configurado.
