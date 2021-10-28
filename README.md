@@ -73,12 +73,12 @@ El nro. de la migración es el que nos ha dado anteriormente al usar el comando 
     >>> python manage.py shell
 
 *Nota*: Veremos el shell porque vemos: >>> en el terminal. Con esto:
-    a) Luego debemos importar el modelo con el que vamos a trabajar.
+a) Luego debemos importar el modelo con el que vamos a trabajar.
     
     >>> from "nombreproyecto".models import "modeloconelquevamosatrabajar"'
 
 Ejm: 'from manage_orders.models import Orders'.
-    b) Para insertar valores en la tabla: 
+b) Para insertar valores en la tabla: 
 
     >>> variable = Modelo(colum1='info', columna2= 000). 
 
@@ -86,23 +86,23 @@ Ejm: 'from manage_orders.models import Orders'.
 
     >>> variable.save().
 
-   c) Se puede hacer sin tantos pasos mediante:
+c) Se puede hacer sin tantos pasos mediante:
    
     >>> variable = Modelo.objects.create(colum1='info', colum2=000)'. 
 
 De esta forma se crea el artículo sin usar el save().
-    d) Para actualizar un artículo en la tabla: 
+d) Para actualizar un artículo en la tabla: 
 
     >>> variableasignada.columna = nuevo valor
     >>> variableasignada.save()
 
 Ejm: goods.price=95, goods.save(). (Lo mismo que un query de tipo UPDATE)
-    e) Para eliminar una fila: creamos una variable nueva:
+e) Para eliminar una fila: creamos una variable nueva:
 
     >>> variablenueva= Modelo.objects.get(criterio) 
     >>> variablenueva.delete()
 
-   f) Para realizar un SELECT:
+f) Para realizar un SELECT:
    
     >>> variablenueva = Modelo.objects.all()
 
@@ -156,7 +156,7 @@ Para usar > y <:
 Esto es equivalente a buscar un precio mayor que numero. Para menor que se usa: __lte=numero.
 Se puede usar también price__range(num1, num2) **IMPORTANTE: No me funciona, preguntar!!!**
 
-Para establecer ORDEY BY: 
+Para establecer ORDER BY: 
 
     >>> Goods.objects.filter(criterio).order_by('columna') 
 
@@ -173,7 +173,9 @@ a) Para acceder al panel es necesario crear un superusuario, esto lo debemos hac
 *Nota*: Las otras tablas que Django crea por defecto en las bases de datos están relacionadas a la información del panel de usuarios.
 
 b)En el archivo admin.py se codifica lo necesario para poder manipular nuestras tablas. Una vez codificado aquí, aparecerá la tabla en el panel de administración. De esta forma podemos manejar algunas tablas de una forma más friendly. 
-    *Nota*: En el panel de administración, los campos que aparezcan en negritas serán aquellos que son obligatorios rellenar.
+
+*Nota*: En el panel de administración, los campos que aparezcan en negritas serán aquellos que son obligatorios rellenar.
+
 c) Para hacer un campo opcional nos vamos a models.py y en el argumento del campo incluimos: blank=True, null=True. Ejm: models.CharField(blank=True, null=True). Luego tenemos que:
     
     >>> python manage.py makemigrations
