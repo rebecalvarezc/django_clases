@@ -5,7 +5,19 @@
     <title>Results</title>
 </head>
 <body>
-
+    <p> You are looking for: <strong> {{query}}</strong></p>
+    {% if goods %}
+        <p> Found goods: {{goods|length}} items.</p>
+        <ul>
+            {% for good in goods %}
+            <li>
+                {{good.name}} item found in the {{good.section}} section. (Price: {{good.price}}$)
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> No articles found.</p>
+    {% endif %}
 
 </body>
 </html>
