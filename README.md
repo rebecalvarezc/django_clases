@@ -136,4 +136,4 @@ de Django ya aparece habilitado. En urls.py está el path al panel de administra
 24.- Para enviar datos al servidor usamos un request, el servidor puede manipular este objeto request y obtener a su vez información del usuario (IP, navegador utilizado, etc.)
 Nota: Buscar request object Django y leer la documentación oficial.
 
-25.- Para poder usar la información de un formulario para busccar en una base de datos:
+25.- Se puede usar la información de un formulario para buscar en una base de datos, sin embargo, es necesario agregar parámetros a esta búsqueda para disminuir los recursos consumidos.

@@ -19,3 +19,7 @@ def search(request):
     else:
         message = 'The search field is empty. Try again.'
     return HttpResponse(message)
+
+
+def contact(request):
+    return render(request, 'contact.html')
