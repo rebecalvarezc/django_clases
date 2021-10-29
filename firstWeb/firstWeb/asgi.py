@@ -1,5 +1,5 @@
 """
-ASGI config for webProject01 project.
+ASGI config for firstWeb project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'webProject01.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'firstWeb.settings')
 
 application = get_asgi_application()
