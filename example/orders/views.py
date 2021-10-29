@@ -41,3 +41,7 @@ def contact(request):
             send_mail(form_info['subject'], form_info['message'],
                       form_info.get('email', 'mail del servidor que estamos usando'), ['lola15f @ gmail.com'], )
             return HttpResponse('<html><body><h1> Thanks! </h1></body></html>')
+    else:
+        my_form = ContactForm()
+
+    return render(request, 'form_contact.html', {'form': my_form})
