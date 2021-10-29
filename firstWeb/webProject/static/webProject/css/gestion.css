@@ -1,5 +1,5 @@
 body {
-    font-family: 'Lora';
+    font-family: 'Lora', serif;
     background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg_main.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Raleway';
+    font-family: 'Raleway', serif;
 }
 
 p {
@@ -81,7 +81,7 @@ p {
 
 #mainNav {
     background-color: rgba(24, 64, 8);
-    font-family: 'Raleway';
+    font-family: 'Raleway', serif;
 }
 
 #mainNav .navbar-brand {
@@ -270,7 +270,7 @@ a.link:hover {
 }
 
 .section-content {
-    font-family: 'Lora' !important;
+    font-family: 'Lora', serif !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 28px !important;
