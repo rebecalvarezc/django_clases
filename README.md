@@ -221,3 +221,11 @@ Posteriormente, si queremos probar que está funcionando lo configurado:
     >>> send_mail('asunto del mensaje', 'cuerpo del mensaje', 'dirección del remitente', ['direccion del destinatario'], fail_silently= False)
 
 Si todo está como queremos, en views.py hacemos la configuración de que se envíe la información del formulario al correo configurado.
+
+28.- Creación de formularios con API FORMS (Buscar en la documentación de Django 'The Forms API'):
+
+a) Nos permite simplificar significativamente la creación de formularios. Además nos permite validar nuestro formulario.
+
+b) Para empezar debemos crear en cualquier lugar de nuestro proyecto un archivo denominado 'forms.py' (aunque por convención se crea en el mismo lugar en el que se encuentra el archivo 'views.py') y alli debemos crear una clase que sea capaz de construir un formulario.
+
+c)
