@@ -5,6 +5,18 @@
     <title>Contact Form</title>
 </head>
 <body>
+    <h1> Contact Us </h1>
+    {% if form.errors %}
+    <p style="color: darkred"> Please, check this field. </p>
+    {% endif %}
 
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input type="submit" value="Send">
+    </form>
 </body>
 </html>
