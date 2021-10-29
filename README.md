@@ -228,4 +228,4 @@ a) Nos permite simplificar significativamente la creación de formularios. Adem�
 
 b) Para empezar debemos crear en cualquier lugar de nuestro proyecto un archivo denominado 'forms.py' (aunque por convención se crea en el mismo lugar en el que se encuentra el archivo 'views.py') y alli debemos crear una clase que sea capaz de construir un formulario.
 
-c)
+c) 
