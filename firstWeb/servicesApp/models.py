@@ -11,7 +11,7 @@ class Service(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
 
-# cuando creamos un modelo podemos especificar características llamadas meta
+    # cuando creamos un modelo podemos especificar características llamadas meta
     class Meta:
         verbose_name = 'service'
         verbose_name_plural = 'services'

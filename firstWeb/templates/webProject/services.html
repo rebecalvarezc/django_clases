@@ -7,6 +7,12 @@
 {% extends 'webProject/base.html' %}
 {% load static %}
 {% block content %}
-
+    {% for service in services %}
+        <div class="services">
+            <h3 style="color: white">{{ service.title }}</h3>
+            <p style="color: white"> {{ service.content }}</p>
+            <p><img src="{{ service.picture.url }}" alt="image of a girl sitting on a bench and reading a newspaper" width="280px"></p>
+        </div>
+    {% endfor %}
 {% endblock %}
 </html>

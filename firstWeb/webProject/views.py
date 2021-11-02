@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from servicesApp.models import Service
 
 
 # Create your views here.
@@ -8,7 +9,8 @@ def home(request):
 
 
 def services(request):
-    return render(request, 'webProject/services.html')
+    service = Service.objects.all()  # importa todos los servicios que hemos construido
+    return render(request, 'webProject/services.html', {'services': service})
 
 
 def store(request):
