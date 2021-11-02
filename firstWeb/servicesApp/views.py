@@ -5,4 +5,7 @@ from .models import Service
 # Create your views here.
 def services(request):
     service = Service.objects.all()  # importa todos los servicios que hemos construido
-    return render(request, 'webProject/../templates/services/services.html', {'services': service})
+    return render(request,
+                  'C:/Users/Rebeca/PycharmProjects/djangoProject/firstWeb/servicesApp/templates/services/services.html',
+                  # No puedo usar 'serviceApp/services.html'
+                  {'services': service})

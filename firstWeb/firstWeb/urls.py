@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('webProject.urls')),
     # hacemos uno de estos por tantas apps tengamos en el proyecto.
+    path('services/', include('servicesApp.urls'))
 ]
