@@ -31,8 +31,9 @@
                 Categories:
                 {% for post in posts %}
                     {% for category in post.categories.all %}
-                        <a style="padding: 3px">{{ category.name }}</a>
+                        <a style="padding: 3px ">{{ category.name }}</a>
                     {% endfor %}
+                    <!-- Esto no nos muestra valores únicos, si hay dos post con la misma categoría muestra: CAT1 CAT1-->
                 {% endfor %}
             </p>
         </div>
