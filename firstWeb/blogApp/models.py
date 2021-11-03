@@ -24,7 +24,8 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # eliminación en cascada
     categories = models.ManyToManyField(Categories)
-    # especificamos la relación entre los post y las categorías. un post puede contener muchas categorías y una categoría puede contener muchos posts.
+    # especificamos la relación entre los post y las categorías.
+    # Un post puede contener muchas categorías y una categoría puede contener muchos posts.
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
 

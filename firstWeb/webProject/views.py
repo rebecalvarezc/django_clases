@@ -14,6 +14,3 @@ def store(request):
 def contact_us(request):
     return render(request, 'webProject/contact_us.html')
 
-
-def blog(request):
-    return render(request, 'webProject/blog.html')
