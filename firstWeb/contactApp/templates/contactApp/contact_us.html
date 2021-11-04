@@ -8,7 +8,11 @@
 {% load static %}
 {% block content %}
 
-
+ <div>
+     <table style="color: white; list-style: none">
+        {{ form.as_table| title }}
+    </table>
+ </div>
 
 {% endblock %}
 </html>
