@@ -276,3 +276,19 @@ ul.errorlist {
     font-style: italic;
     color: red;
 }
+
+
+.formContainer{
+    font-family: 'Lora', serif;
+    color: rgb(57, 38, 19);
+    background-color: rgb(223, 147, 32,0.5);
+    width: 60%;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.button{
+    /* Como muevo el botón a la derecha? */
+}

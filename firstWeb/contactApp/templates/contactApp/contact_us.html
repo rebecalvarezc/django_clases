@@ -8,10 +8,13 @@
 {% load static %}
 {% block content %}
 
- <div>
-     <table style="color: white; list-style: none">
-        {{ form.as_table| title }}
-    </table>
+ <div class="formContainer">
+     <form action="" method="post">
+          <table style="margin: 10px auto">
+              {{ form.as_table| title }}
+          </table>
+     </form>
+    <input class="button" type="submit" value="Send" style="width: 100px;">
  </div>
 
 {% endblock %}
