@@ -11,6 +11,3 @@ def store(request):
     return render(request, 'webProject/store.html')
 
 
-def contact_us(request):
-    return render(request, 'webProject/contact_us.html')
-
