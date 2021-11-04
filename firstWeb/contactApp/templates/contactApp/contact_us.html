@@ -9,13 +9,16 @@
 {% block content %}
 
  <div class="formContainer">
+    {% if 'valid' in request.GET %}
+        <p>Form sent correctly. Thanks!</p>
+    {% endif %}
      <form action="" method="POST" style="text-align: center">
          {% csrf_token %}
           <table style="margin: 10px auto">
               {{ form.as_table| title }}
           </table>
+         <input type="submit" style="width: 100px; position: relative; left: 35%">
      </form>
-    <input type="submit" value="Send" style="width: 100px; position: relative; left: 75%">
  </div>
     {{request.POST}}
 {% endblock %}

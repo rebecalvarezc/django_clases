@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 
@@ -11,4 +11,6 @@ def contact_us(request):
             name = request.POST.get('name')
             email = request.POST.get('email')
             content = request.POST.get('content')
+            return redirect('us/?valid')
+
     return render(request, 'contactApp/contact_us.html', {'form': contact_form})
