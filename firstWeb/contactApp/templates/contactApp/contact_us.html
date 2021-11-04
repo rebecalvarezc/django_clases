@@ -9,13 +9,14 @@
 {% block content %}
 
  <div class="formContainer">
-     <form action="" method="post" style="text-align: center">
+     <form action="" method="POST" style="text-align: center">
+         {% csrf_token %}
           <table style="margin: 10px auto">
               {{ form.as_table| title }}
           </table>
      </form>
-    <input class="button" type="submit" value="Send" style="width: 100px; position: relative; left: 75% ">
+    <input type="submit" value="Send" style="width: 100px; position: relative; left: 75%">
  </div>
-
+    {{request.POST}}
 {% endblock %}
 </html>
