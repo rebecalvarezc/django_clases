@@ -22,5 +22,5 @@ urlpatterns = [
     # hacemos uno de estos por tantas apps tengamos en el proyecto.
     path('services/', include('servicesApp.urls')),
     path('blog/', include('blogApp.urls')),
-
+    path('us/', include('contactApp.urls')),
 ]
