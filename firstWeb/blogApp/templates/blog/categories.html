@@ -31,7 +31,7 @@
                 Categories:
                 {% for post in posts %}
                     {% for category in post.categories.all%}
-                        <a style="padding: 3px ">{{ category.name }}</a>
+                        <a style="padding: 3px; color: white ">{{ category.name }}</a>
                     {% endfor %}
                 {% endfor %}
             </p>

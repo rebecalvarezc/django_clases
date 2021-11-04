@@ -39,7 +39,7 @@
           <li class="nav-item {%  if request.path == '/' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Home</a>
           </li>
-          <li class="nav-item {%  if request.path == '/services' %} active {% endif %} px-lg-4">
+          <li class="nav-item {%  if request.path == '/services/' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'services' %}">Services</a>
           </li>
           <li class="nav-item {%  if request.path == '/store' %} active {% endif %} px-lg-4">
@@ -48,7 +48,8 @@
           <li class="nav-item {%  if request.path == '/us' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'contact' %}">Contact Us</a>
           </li>
-          <li class="nav-item {%  if request.path == '/blog' %} active {% endif %} px-lg-4">
+          <li class="nav-item {%  if request.path|slice:':6' == '/blog/' %} active {% endif %} px-lg-4">
+            <!-- el slice hace que aplique ese estilo a toda URL que comience con los 6 primeros caracteres de nuestro path (en este caso: /blog/). -->
             <a class="nav-link text-uppercase text-expanded" href="{% url 'blog' %}">Blog</a>
           </li>
          

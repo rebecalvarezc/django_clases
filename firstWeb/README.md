@@ -5,6 +5,9 @@ It allows to map a requested URL from a user to the code that is actually meant 
 With the use of templates we can inject calculated values or information from a database into a HTML page.
 This framework connects the front-end with the back-end.
 
+*Note: A web framework is a collection of modular tools that abstracts away much of the difficulty and repetition of web development. 
+I.e: Django & Flask in Python, Rails in Ruby, and Express in JavaScript.*
+
         django-admin startproject project_name
 
 The above command starts a new project. Inside this project we will have a directory (with the same name as project_name) and a manage.py file.
