@@ -24,3 +24,4 @@ def contact_us(request):
     return render(request, 'contactApp/contact_us.html', {'form': contact_form})
 
 # TODO: arreglar que cuando se envía el formulario sale un error de 'this field is required'.
+# TODO: arreglar que el formulario no se envía ( url no cambia a ?valid)
