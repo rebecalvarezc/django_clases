@@ -15,3 +15,5 @@ def category(request, category_id):
     return render(request,
                   'blog/categories.html',
                   {'categories': cat, 'posts': posts})
+
+# TODO: Arreglar las etiquetas de las categorías al fondo de la página, salen repetidas
