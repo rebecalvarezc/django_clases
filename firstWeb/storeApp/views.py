@@ -7,3 +7,5 @@ from .models import Product
 def store(request):
     product = Product.objects.all()
     return render(request, 'store/store.html', {'products': product})
+
+#TODO: fix grid height in template (different card heights)
