@@ -18,11 +18,11 @@ def contact_us(request):
             #                       'lolaf@gmail.com', reply_to=None)
             # try:
             #     e_mail.send()
-            #     return redirect('/us/?valid')
+            return redirect('/us/?valid')
             #
             # except:
             #     return redirect('/us/?novalid')
-            return render(request, 'contactApp/contact_us.html', {'form': contact_form})
+        return render(request, 'contactApp/contact_us.html', {'form': contact_form})
 
 # TODO: arreglar que cuando se envía el formulario sale un error de 'this field is required'.
 # TODO: arreglar que el formulario no se envía ( url no cambia a ?valid)
