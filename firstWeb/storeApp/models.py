@@ -22,3 +22,7 @@ class Product(models.Model):
     # necesario tener instalado Pillow para no tener errores con la migración
     price = models.FloatField()
     available = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'product'
+        verbose_name_plural = 'products'
