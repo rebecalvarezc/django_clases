@@ -6,8 +6,3 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'webProject/home.html')
 
-
-def store(request):
-    return render(request, 'webProject/store.html')
-
-
