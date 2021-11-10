@@ -26,3 +26,4 @@ def contact_us(request):
 
 # TODO: arreglar que cuando se envía el formulario sale un error de 'this field is required'.
 # TODO: arreglar que el formulario no se envía ( url no cambia a ?valid)
+# TODO: mover el botón a la derecha de forma más eficiente
