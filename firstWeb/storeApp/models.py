@@ -22,6 +22,8 @@ class Product(models.Model):
     # necesario tener instalado Pillow para no tener errores con la migración
     price = models.FloatField()
     available = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'product'
