@@ -24,3 +24,34 @@ class Cart:
                 'quantity': 1,
                 'image': product.picture.url
             }
+
+        else:
+            for key, value in self.cart.items():
+                if key == str(product.id):
+                    value['quantity'] = +1
+                    break
+        self.safe_cart()
+
+    def safe_cart(self):
+        self.session['cart'] = self.cart
+        self.session.modified = True
+
+    def delete(self, product):
+        product.id = str(product.id)
+        if product.id in self.cart:
+            del self.cart[product.id]
+            self.safe_cart()
+
+    def remove(self, product):
+        for key, value in self.cart.items():
+            if key == str(product.id):
+                if value['quantity'] == 1:
+                    self.delete(product)
+                else:
+                    value['quantity'] = -1
+                break
+        self.safe_cart()
+
+    def clean_cart(self):
+        self.session['cart'] = {}
+        self.session.modified = True
