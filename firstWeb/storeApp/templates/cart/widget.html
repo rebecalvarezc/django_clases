@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store</title>
+</head>
+
+<body>
+    <table class="table table-bordered" style="color: white; margin-top: 5px;">
+        <thead>
+            <tr>
+                <th colspan="3" class="text-center"> Shopping Cart</th>
+            </tr>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if request.session.cart.items %}
+                {% for key, value in request.session.cart.items %}
+
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">
+                        <div class="alert alert-info text-center">No items added</div>
+                    </td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</body>

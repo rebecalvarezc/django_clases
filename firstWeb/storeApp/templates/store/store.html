@@ -10,13 +10,14 @@
 <div class="container">
 
     <div style="float: right; color: white">
-        This is gonna be the shopping cart
+        {% include 'cart/widget.html' %}
+        <p>Total: {{total_cart_value}} $</p>
     </div>
     <div class="row">
 {% for product in products %}
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card" style="margin: 5px 5px;">
-            <img src="{{ product.picture.url }}" class="card-img-top" style="height: 180px;">
+            <img src="{{ product.picture.url }}" class="card-img-top" style="height: 180px;" alt="store item image">
             <div class="card-body" style="text-align: center">
                 <h6 class="card-title"> {{ product.name|title }} </h6>
                 <p class="card-text"> {{ product.price }}$ </p>
