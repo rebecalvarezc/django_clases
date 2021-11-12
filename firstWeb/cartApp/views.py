@@ -58,4 +58,4 @@ def delete_cart(request):
     cart.clean_cart()
     return redirect('store')
 
-# TODO: Problem in template when i add ' href="{% url 'cart:add' product_id %}"' to product button
+
