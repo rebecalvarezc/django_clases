@@ -21,7 +21,16 @@
         <tbody>
             {% if request.session.cart.items %}
                 {% for key, value in request.session.cart.items %}
-
+                    <tr class="text-center">
+                        <td> {{ value.name }}</td>
+                        <td> {{ value.quantity }}</td>
+                        <td>
+                            <a href="{% url 'cart:add' value.product_id %}" class="btn btn-sm btn-success">+</a>
+                            <a href="{% url 'cart:remove' value.product_id %}" class="btn btn-sm btn-success">-</a>
+                            <br>
+                            {{ value.price }}$
+                        </td>
+                    </tr>
                 {% endfor %}
             {% else %}
                 <tr>
@@ -31,5 +40,10 @@
                 </tr>
             {% endif %}
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"> Total:{{total_cart_value}} $ </td>
+            </tr>
+        </tfoot>
     </table>
 </body>
