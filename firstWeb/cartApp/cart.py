@@ -48,7 +48,7 @@ class Cart:
         for key, value in self.cart.items():
             if key == str(product.id):
                 value['quantity'] -= 1
-                value['price'] = value['price'] - float(product.price)
+                value['price'] = value['quantity'] * float(product.price)
                 if value['quantity'] < 1:
                     self.delete(product)
                     break
