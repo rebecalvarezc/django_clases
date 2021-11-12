@@ -29,7 +29,7 @@ class Cart:
             for key, value in self.cart.items():
                 if key == str(product.id):
                     value['quantity'] += 1
-                    # value['price'] += float(product.price)
+                    value['price'] = value['quantity'] * float(product.price)
                     # error porque price es str y no se puede sumar str
                     break
         self.safe_cart()
@@ -48,6 +48,7 @@ class Cart:
         for key, value in self.cart.items():
             if key == str(product.id):
                 value['quantity'] -= 1
+                value['price'] = value['price'] - float(product.price)
                 if value['quantity'] < 1:
                     self.delete(product)
                     break
