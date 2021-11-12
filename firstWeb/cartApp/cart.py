@@ -47,11 +47,10 @@ class Cart:
     def remove(self, product):
         for key, value in self.cart.items():
             if key == str(product.id):
+                value['quantity'] -= 1
                 if value['quantity'] < 1:
                     self.delete(product)
-                else:
-                    value['quantity'] -= 1
-                break
+                    break
         self.safe_cart()
 
     def clean_cart(self):
