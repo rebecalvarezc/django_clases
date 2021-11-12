@@ -30,7 +30,7 @@ class Cart:
                 if key == str(product.id):
                     value['quantity'] += 1
                     value['price'] = value['quantity'] * float(product.price)
-                    # error porque price es str y no se puede sumar str
+
                     break
         self.safe_cart()
 
