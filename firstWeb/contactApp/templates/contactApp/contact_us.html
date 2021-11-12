@@ -12,12 +12,12 @@
     {% if 'valid' in request.GET %}
         <p>Form sent correctly. Thanks!</p>
     {% endif %}
-     <form action="" method="POST" style="text-align: center">
+     <form action="" method="POST" style="text-align: left">
          {% csrf_token %}
           <table style="margin: 10px auto">
               {{ form.as_table| title }}
           </table>
-         <input type="submit" style="width: 100px; position: relative; left: 35%">
+         <input type="submit" style="width: 100px; position: relative; left: 75%">
      </form>
  </div>
     {{request.POST}}
