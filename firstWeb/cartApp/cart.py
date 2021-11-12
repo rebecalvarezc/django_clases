@@ -12,7 +12,7 @@ class Cart:
             # {clave (id del prod): {valor (características del producto)}}
             cart = self.session['cart'] = {}
 
-        else:
+        # else:
             self.cart = cart
 
     def add(self, product):

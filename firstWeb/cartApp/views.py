@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from .cart import Cart
-from storeApp.models import Product, ProdCat
+from storeApp.models import Product
 
 
 # Create your views here.
@@ -57,3 +57,5 @@ def delete_cart(request):
     cart = Cart(request)
     cart.clean_cart()
     return redirect('store')
+
+# TODO: Problem in template when i add ' href="{% url 'cart:add' product_id %}"' to product button
