@@ -8,16 +8,20 @@
 {% load static %}
 {% block content %}
 <div class="container">
+
+    <div style="float: right; color: white">
+        This is gonna be the shopping cart
+    </div>
     <div class="row">
 {% for product in products %}
     <div class="col-md-3">
         <div class="card" style="margin: 5px 5px;">
-            <img src="{{ product.picture.url }}" class="card-img-top" style="height: 260px;">
+            <img src="{{ product.picture.url }}" class="card-img-top" style="height: 180px;">
             <div class="card-body" style="text-align: center">
                 <h6 class="card-title"> {{ product.name|title }} </h6>
                 <p class="card-text"> {{ product.price }}$ </p>
             </div>
-            <div class="footer text-center" style="background-color: white">
+            <div class="footer text-center" style="background-color: white; margin-bottom: 3px;">
                 <a href="#" class="btn btn-success"> Add to cart</a>
             </div>
         </div>
