@@ -120,3 +120,6 @@ Otra ventaja es que es compatible con la mayoría de los navegadores, además de
 
 Se puede usar el panel de administración para manejar las aplicaciones creadas. Aunque es necesario configurar Django para poder guardar datos en la base de dato y para mostrarlos en la página web.
 
+### Views
+
+The view presents the model to the client as an HTTP response.
